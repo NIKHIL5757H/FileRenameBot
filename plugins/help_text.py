@@ -45,7 +45,8 @@ async def help_user(bot, update):
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.HELP_USER,
-        reply_to_message_id=update.message_id
+        reply_to_message_id=update.message_id,
+      keyboard += [[InlineKeyboardButton(text="My Super Commands ⚙️", callback_data="help_back")]]
     )
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["about"]))
